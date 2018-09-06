@@ -6,7 +6,6 @@ $route['/'] = ['Page', 'index'];
 
 //page
 $route['/login'] = ['Page', 'login'];
-//page
 $route['/backend'] = ['Page', 'backend'];
 
 //api
