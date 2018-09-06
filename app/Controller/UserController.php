@@ -13,11 +13,18 @@ class UserController extends Controller
 
     public function loginZero()
     {
+        $param = [
+            'name' => 'string',
+            'password' => 'string'
+        ];
+        $request = $this->Request();
+        $request->validation($param);
         $user = new \stdClass();
-        $user->name = "admin";
-        $user->password = "123456";
+        $user->name = $request->getParam('name');
+        $user->password = $request->getParam('password');
         $islogin = $this->UserModel->userLogin($user);
-        var_dump($islogin);exit;
-        $this->render('Index', ["val" => $conf]);
+        if($islogin)
+            $this->statusPrint(200, '登陆成功！');
+        $this->statusPrint(101, '登陆失败！');
     }
 }

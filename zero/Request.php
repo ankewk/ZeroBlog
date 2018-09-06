@@ -7,14 +7,15 @@ class Request
 	private $param;
 	private $server;
 
-	public function __construct() 
+	public function __construct()
 	{
 		switch($_SERVER['REQUEST_METHOD']) {
 			case 'GET':
 				$this->param = $_GET;
 				break;
 			case 'POST':
-				$this->param = $_POST;
+				$input = file_get_contents("php://input");
+				$this->param = $_POST ? $_POST : json_decode($input, 1);
 				break;
 			default :
 				return 'HTTP Methods is not exits';
@@ -49,7 +50,7 @@ class Request
 		return $this->server;
 	}
 
-	public function getDomain() 
+	public function getDomain()
 	{
 		$domain = $_SERVER['HTTP_HOST'];
 		$port = strpos($domain, ':');

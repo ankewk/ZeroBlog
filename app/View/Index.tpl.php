@@ -1,5 +1,7 @@
-<center>
-    <h1>ZeroBlog<h1>
-    <span>基于ZeroPHP+doctrine开发的博客系统</span>
-    <h3>By:<?php echo $val['author'];?></h3>
-</center>
+<?php include_once 'Header.tpl.php'; ?>
+<row>
+</row>
+<?php include_once 'Footer.tpl.php'; ?>
+<script type="text/javascript">
+
+</script>

@@ -2,6 +2,12 @@
 $route = [];
 
 //System
-$route['/'] = ['Index', 'index'];
+$route['/'] = ['Page', 'index'];
 
-$route['/login'] = ['User', 'login'];
+//page
+$route['/login'] = ['Page', 'login'];
+//page
+$route['/backend'] = ['Page', 'backend'];
+
+//api
+$route['/api/login'] = ['User', 'login'];
