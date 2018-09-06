@@ -10,3 +10,4 @@ $route['/backend'] = ['Page', 'backend'];
 
 //api
 $route['/api/login'] = ['User', 'login'];
+$route['/api/login'] = ['User', 'login'];
